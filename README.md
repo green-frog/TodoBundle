@@ -5,16 +5,15 @@ TodoBundle
 
 **Warning**
 
-> This has NEVER been tested ! This bundle IS NOT yet ready to use
-> Please use [TodoBundle-sandbox] (https://github.com/green-frog/TodoBundle-sandbox) wich is ready to use
+> This has NEVER been tested ! This bundle IS NOT yet ready to use. Please use [TodoBundle-sandbox] (https://github.com/green-frog/TodoBundle-sandbox) wich is ready to use
 
 Requirements
 ------------
 
 - [FOSUserBundle] (https://github.com/FriendsOfSymfony/FOSUserBundle)
-> Cause we'll do it later :
-> You can pass trougth Step 4 : Configure User class
-> And step 6 Configure in ``app/config.yml``
+  - Cause we'll do it later :
+  - You can pass trougth Step 4 : Configure User class
+  - And step 6 Configure in ``app/config.yml``
 - [FOSJsRoutingBundle] (https://github.com/FriendsOfSymfony/FOSJsRoutingBundle)
 - Optional : [Doctrine fixtures](https://github.com/symfony/DoctrineFixturesBundle)
 

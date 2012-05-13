@@ -20,7 +20,7 @@ class DefaultController extends Controller
         $securityContext = $this->get('security.context');
         $user = $securityContext->getToken()->getUser();
         if(!$securityContext->isGranted('ROLE_USER')) {
-            throw new Exception('Fort biddeun !');
+            throw new \Exception('Fort biddeun !');
         }
         
         //- New task Form : Default to current user

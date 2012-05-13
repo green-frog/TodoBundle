@@ -31,12 +31,13 @@ After installing requirements, just follow thoose steps
 7. Optional : load fixtures
 
 ### 1. Download GreenFrogTodoBundle
+
 Using the standard Symfony 2 method with vendors, add the following lines in your `deps` file:
 
 ``` ini
 [GreenFrogTodoBundle]
     git=git://github.com/green-frog/TodoBundle.git
-    target=bundles/GreenFrog/TodoBundle
+    target=bundles/GreenFrog/Bundle/TodoBundle
 ```
 
 And now, download it:
@@ -48,6 +49,7 @@ $ php bin/vendors install
 ### 2. Configure Autoloader and enable module
 
 Autload
+
 ``` php
 <?php
 // app/autoload.php
@@ -57,7 +59,9 @@ $loader->registerNamespaces(array(
     'GreenFrog' => __DIR__.'/../vendor/bundles',
 ));
 ```
+
 Then enable
+
 ``` php
 <?php
 // app/AppKernel.php
@@ -74,6 +78,7 @@ public function registerBundles()
 ### 3. Extends FOSUser class and global template
 
 If you skipped step 6 and/or step 4 of FOSUser configuration :
+
 ``` yaml
 # app/config/config.yml
 fos_user:
@@ -83,6 +88,7 @@ fos_user:
 ```
 
 If you use twig :
+
 ``` twig
 {# app/Ressources/FOSUserBundle/views/layout.html.twig #}
 {% extends 'GreenFrogTodoBundle::layout.html.twig' %}
@@ -97,11 +103,23 @@ Secured area - Todo App
 
 ### 4. Configure GreenFrogTodoBundle
 
+Add routing
+
 ``` yaml
 # app/config/routing.yml
 GreenFrogTodoBundle:
     resource: "@GreenFrogTodoBundle/Controller/"
     type:     annotation
+```
+
+Configure firewall to make app only available by logged in users
+
+``` yaml
+# app/config/security.yml
+security:
+    access_control:
+        - { path: ^/.*$, role: ROLE_USER }
+
 ```
 
 ### 5. Update database schema
@@ -114,9 +132,11 @@ $ php app/console doctrine:schema:update --force
 
 ``` bash
 php app/console assets:install web/ --symlink
+php app/console assetic:dump
 ```
 
 ### 7. Optinal : load fixtures
+
 ``` bash
 php app/console doctrine:fixtures:load
 ```

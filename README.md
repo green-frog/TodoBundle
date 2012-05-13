@@ -12,9 +12,9 @@ Requirements
 ------------
 
 - [FOSUserBundle] (https://github.com/FriendsOfSymfony/FOSUserBundle)
-  > Cause we'll do it for our own :
-  > You can pass trougth Step 4 : Configure User class
-  > And step 6 Configure in ``app/config.yml``
+> Cause we'll do it later :
+> You can pass trougth Step 4 : Configure User class
+> And step 6 Configure in ``app/config.yml``
 - [FOSJsRoutingBundle] (https://github.com/FriendsOfSymfony/FOSJsRoutingBundle)
 - Optional : [Doctrine fixtures](https://github.com/symfony/DoctrineFixturesBundle)
 
